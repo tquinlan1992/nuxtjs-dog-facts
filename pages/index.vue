@@ -58,6 +58,7 @@ export default Vue.extend({
       const dogFacts = await getDogFactsProxy()
       this.dogFactOrSearch = RandomDogFactOrSearch.RANDOM_DOG_FACT
       this.dogFact = dogFacts.data[0].fact
+      this.search = ''
     },
 
     async searchDogFacts(event: Event) {
