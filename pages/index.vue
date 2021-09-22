@@ -1,5 +1,11 @@
 <template>
   <div>
+    <button @click="loadNewDogFact">Get New Dog Fact</button>
+
+    <form @submit="searchDogFacts">
+      <input v-model="search" placeholder="search dog fact" />
+    </form>
+
     <div v-if="dogFactOrSearch === 'RANDOM_DOG_FACT'">
       <h4>Random Dog Fact</h4>
       <p>{{ dogFact }}</p>
@@ -11,12 +17,6 @@
         {{ dogFact2 }}
       </li>
     </div>
-
-    <button @click="loadNewDogFact">Get New Dog Fact</button>
-
-    <form @submit="searchDogFacts">
-      <input v-model="search" placeholder="search dog fact" />
-    </form>
   </div>
 </template>
 
