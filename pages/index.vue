@@ -8,7 +8,7 @@
 
     <div v-if="dogFactOrSearch === 'RANDOM_DOG_FACT'">
       <h4>Random Dog Fact</h4>
-      <p>{{ dogFact }}</p>
+      <p style="white-space: pre-line">{{ dogFact }}</p>
     </div>
 
     <div v-if="dogFactOrSearch === 'SEARCH'">
@@ -50,7 +50,7 @@ export default Vue.extend({
   },
   async fetch() {
     const dogFacts = await getDogFacts()
-    this.dogFact = dogFacts.data[0].fact
+    this.dogFact = 'Server Generated Dog fact: \n' + dogFacts.data[0].fact
   },
 
   methods: {
